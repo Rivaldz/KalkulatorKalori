@@ -1,8 +1,10 @@
-package com.valdo.kalkulatorkalori;
+package com.valdo.kalkulatorkalori.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.valdo.kalkulatorkalori.R;
 
 public class MainActivity extends AppCompatActivity {
 
