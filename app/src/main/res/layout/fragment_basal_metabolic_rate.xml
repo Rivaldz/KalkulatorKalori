@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.BasalMetabolicRateFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textviewBMR"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="BMR Kalkulator"
+            android:textColor="#000000"
+            android:textSize="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="120dp" />
+
+        <RadioGroup
+            android:id="@+id/ragdioGrupBMR"
+            android:layout_width="287dp"
+            android:layout_height="28dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.36"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
+            app:layout_constraintTop_toBottomOf="@+id/textviewBMR"
+            app:layout_constraintVertical_bias="0.04000002">
+
+            <RadioButton
+                android:id="@+id/radioLaki_Laki"
+                android:layout_width="139dp"
+                android:layout_height="match_parent"
+                android:text="Laki-Laki" />
+
+            <RadioButton
+                android:id="@+id/radioPerempuan"
+                android:layout_width="148dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Perempuan" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/textGender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="96dp"
+            android:text="Gender"
+            android:textColor="#000000"
+            android:textSize="15dp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline2"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textTinggiBadan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="TInggi Badan(CM)"
+            android:textColor="#000000"
+            android:textSize="15dp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline2"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textGender" />
+
+        <TextView
+            android:id="@+id/textBeratBadan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Berat Badan(Kg)"
+            android:textColor="#000000"
+            android:textSize="15dp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline2"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textTinggiBadan" />
+
+        <TextView
+            android:id="@+id/textUsia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Usia"
+            android:textColor="#000000"
+            app:layout_constraintEnd_toStartOf="@+id/guideline2"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textBeratBadan" />
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="278dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="12dp"
+            android:ems="10"
+            android:inputType="number"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
+            app:layout_constraintTop_toBottomOf="@+id/ragdioGrupBMR" />
+
+        <EditText
+            android:id="@+id/editText2"
+            android:layout_width="278dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="64dp"
+            android:ems="10"
+            android:inputType="number"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
+            app:layout_constraintTop_toBottomOf="@+id/ragdioGrupBMR" />
+
+        <EditText
+            android:id="@+id/editText3"
+            android:layout_width="278dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="120dp"
+            android:ems="10"
+            android:inputType="number"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
+            app:layout_constraintTop_toBottomOf="@+id/ragdioGrupBMR" />
+
+        <TextView
+            android:id="@+id/textFisik"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:textSize="15dp"
+            android:textColor="#000000"
+            android:text="Level Aktivitas Visik"
+            app:layout_constraintEnd_toStartOf="@+id/guideline2"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textUsia" />
+
+        <RadioGroup
+            android:id="@+id/radioGroupAktivitas"
+            android:layout_width="410dp"
+            android:layout_height="168dp"
+            android:layout_marginTop="45dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editText3">
+
+            <RadioButton
+                android:id="@+id/radioTidakAktif"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tidak Aktif" />
+
+            <RadioButton
+                android:id="@+id/radioSedikitAktif"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sedikit Aktif" />
+
+            <RadioButton
+                android:id="@+id/radioCukupAktif"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cukup Aktif" />
+
+            <RadioButton
+                android:id="@+id/radioAktif"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Aktif" />
+
+            <RadioButton
+                android:id="@+id/radioSangatAktif"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sangat Aktif" />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/butttonHitung"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Hitung"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroupAktivitas"
+            app:layout_constraintVertical_bias="0.13" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
