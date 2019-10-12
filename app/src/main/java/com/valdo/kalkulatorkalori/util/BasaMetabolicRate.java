@@ -9,5 +9,20 @@ public class BasaMetabolicRate {
     private  int berat;
     private  int usia;
     private  int gender;
+    private  float index;
+
+    public BasaMetabolicRate(int tinggi, int berat, int usia, int gender) {
+        this.tinggi = tinggi;
+        this.berat = berat;
+        this.usia = usia;
+        this.gender = gender;
+        this.index = hitung();
+    }
+
+    private float hitung() {
+
+        return index;
+
+    }
 
 }

@@ -9,6 +9,10 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.RadioGroup;
+import android.widget.TextView;
 
 import com.valdo.kalkulatorkalori.R;
 
@@ -21,6 +25,11 @@ import com.valdo.kalkulatorkalori.R;
 public class BasalMetabolicRateFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
+    private RadioGroup radioGroup;
+    private EditText tinggiBadan;
+    private EditText beratBadan;
+    private EditText usia;
+
 
     public BasalMetabolicRateFragment() {
         // Required empty public constructor
@@ -31,15 +40,31 @@ public class BasalMetabolicRateFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_basal_metabolic_rate, container, false);
+        View view = inflater.inflate(R.layout.fragment_basal_metabolic_rate, container, false);
+        radioGroup = view.findViewById(R.id.radioGrupBMR);
+        tinggiBadan = view.findViewById(R.id.editTextTinggi);
+        beratBadan = view.findViewById(R.id.editTextBerat);
+        usia = view.findViewById(R.id.editTextUsia);
+
+        Button buttonHitung = view.findViewById(R.id.butttonHitung);
+        buttonHitung.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               if (mListener != null){
+
+               }
+            }
+        });
+
+        return  view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
-    }
+//    public void onButtonPressed(Uri uri) {
+//        if (mListener != null) {
+//            mListener.onFragmentInteraction(uri);
+//        }
+//    }
 
     @Override
     public void onAttach(Context context) {
@@ -69,7 +94,8 @@ public class BasalMetabolicRateFragment extends Fragment {
      * >Communicating with Other Fragments</a> for more information.
      */
     public interface OnFragmentInteractionListener {
+
         // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
+        void onCalculateButtonBMRClicked();
     }
 }

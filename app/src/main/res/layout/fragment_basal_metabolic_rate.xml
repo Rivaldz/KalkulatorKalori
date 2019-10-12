@@ -30,7 +30,7 @@
             app:layout_constraintGuide_begin="120dp" />
 
         <RadioGroup
-            android:id="@+id/ragdioGrupBMR"
+            android:id="@+id/radioGrupBMR"
             android:layout_width="287dp"
             android:layout_height="28dp"
             android:orientation="horizontal"
@@ -107,7 +107,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textBeratBadan" />
 
         <EditText
-            android:id="@+id/editText"
+            android:id="@+id/editTextTinggi"
             android:layout_width="278dp"
             android:layout_height="40dp"
             android:layout_marginTop="12dp"
@@ -116,10 +116,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/guideline2"
-            app:layout_constraintTop_toBottomOf="@+id/ragdioGrupBMR" />
+            app:layout_constraintTop_toBottomOf="@+id/radioGrupBMR" />
 
         <EditText
-            android:id="@+id/editText2"
+            android:id="@+id/editTextBerat"
             android:layout_width="278dp"
             android:layout_height="40dp"
             android:layout_marginTop="64dp"
@@ -128,10 +128,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/guideline2"
-            app:layout_constraintTop_toBottomOf="@+id/ragdioGrupBMR" />
+            app:layout_constraintTop_toBottomOf="@+id/radioGrupBMR" />
 
         <EditText
-            android:id="@+id/editText3"
+            android:id="@+id/editTextUsia"
             android:layout_width="278dp"
             android:layout_height="40dp"
             android:layout_marginTop="120dp"
@@ -140,7 +140,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/guideline2"
-            app:layout_constraintTop_toBottomOf="@+id/ragdioGrupBMR" />
+            app:layout_constraintTop_toBottomOf="@+id/radioGrupBMR" />
 
         <TextView
             android:id="@+id/textFisik"
@@ -162,7 +162,7 @@
             android:layout_marginTop="45dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText3">
+            app:layout_constraintTop_toBottomOf="@+id/editTextUsia">
 
             <RadioButton
                 android:id="@+id/radioTidakAktif"
