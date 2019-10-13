@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements
     @Override
     public void onCalculateButtonBMRClicked(float index) {
         hasilFragment.setInformasi(String.format("Kebutuhan kalori harian anda adalah %.1f",index));
-        basalMetabolicRateFragment = (BasalMetabolicRateFragment) getSupportFragmentManager().findFragmentByTag("BROCA_FRAGMENT");
+        basalMetabolicRateFragment = (BasalMetabolicRateFragment) getSupportFragmentManager().findFragmentByTag("BMR");
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.fragment_container,hasilFragment)
 //				.addToBackStack(null)
@@ -56,6 +56,17 @@ public class MainActivity extends AppCompatActivity implements
 
     @Override
     public void buttonHitungLagi(String tag) {
+        if (basalMetabolicRateFragment == null){
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.fragment_container, new BasalMetabolicRateFragment(),"BMR")
+                    .commit();
+        }
+        else {
+
+//            getSupportFragmentManager().beginTransaction()
+//                    .replace(R.id.fragment_container, new , "BMI_FRAGMENT")
+//                    .commit();
+        }
 
     }
 }

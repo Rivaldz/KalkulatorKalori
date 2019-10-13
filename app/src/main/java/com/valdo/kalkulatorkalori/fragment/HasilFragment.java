@@ -10,6 +10,7 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.valdo.kalkulatorkalori.R;
@@ -41,6 +42,16 @@ public class HasilFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_hasil, container, false);
         TextView informasiText = view.findViewById(R.id.textHasil);
         informasiText.setText(informasi);
+
+        Button hitungLagi = view.findViewById(R.id.buttonHitungLagi);
+        hitungLagi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (mListener != null){
+                    mListener.buttonHitungLagi("BMR");
+                }
+            }
+        });
         return view;
     }
 

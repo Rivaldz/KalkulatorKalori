@@ -149,7 +149,7 @@
             android:layout_marginTop="32dp"
             android:textSize="15dp"
             android:textColor="#000000"
-            android:text="Level Aktivitas Visik"
+            android:text="Level Aktivitas fisik"
             app:layout_constraintEnd_toStartOf="@+id/guideline2"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -168,31 +168,31 @@
                 android:id="@+id/radioTidakAktif"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Tidak Aktif" />
+                android:text="Kurang Aktif (Jarang / Tidak Pernah Olahraga)" />
 
             <RadioButton
                 android:id="@+id/radioSedikitAktif"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Sedikit Aktif" />
+                android:text="Sedikit Aktif (1 atau 2 kali seminggu Olahraga)" />
 
             <RadioButton
                 android:id="@+id/radioCukupAktif"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Cukup Aktif" />
+                android:text="Cukup Aktif (4 Kali seminggu Olahraga)" />
 
             <RadioButton
                 android:id="@+id/radioAktif"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Aktif" />
+                android:text="Aktif (5 Kali seminggu Olahraga)" />
 
             <RadioButton
                 android:id="@+id/radioSangatAktif"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Sangat Aktif" />
+                android:text="Sangat Aktif (Setiap Hari ber olahraga)" />
         </RadioGroup>
 
         <Button
