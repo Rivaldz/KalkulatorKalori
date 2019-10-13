@@ -1,33 +1,28 @@
 package com.valdo.kalkulatorkalori.fragment;
 
 import android.content.Context;
-import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ImageView;
 
 import com.valdo.kalkulatorkalori.R;
-import com.valdo.kalkulatorkalori.activities.PembakaranKalori;
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link MenuFragment.OnFragmentInteractionListener} interface
+ * {@link PemakaianKalori.OnFragmentInteractionListener} interface
  * to handle interaction events.
  */
-public class MenuFragment extends Fragment {
+public class PemakaianKalori extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public MenuFragment() {
+    public PemakaianKalori() {
         // Required empty public constructor
     }
 
@@ -36,36 +31,15 @@ public class MenuFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_menu, container, false);
-        ImageView BMRButton = view.findViewById(R.id.imageBMR);
-        ImageView KcalButton = view.findViewById(R.id.imageKcal);
-
-        BMRButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (mListener != null){
-                    mListener.onFragmentBMRCliked();
-                }
-            }
-        });
-
-        KcalButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (mListener != null){
-                    mListener.onFragmentKcalCliked();
-                    getActivity().startActivity(new Intent(getActivity(),PembakaranKalori.class));
-                    getActivity().finish();
-                }
-            }
-        });
-
-        return view;
-
-
-
+        return inflater.inflate(R.layout.fragment_pemakaian_kalori, container, false);
     }
 
+    // TODO: Rename method, update argument and hook method into UI event
+    public void onButtonPressed(Uri uri) {
+        if (mListener != null) {
+            mListener.onFragmentInteraction(uri);
+        }
+    }
 
     @Override
     public void onAttach(Context context) {
@@ -96,8 +70,6 @@ public class MenuFragment extends Fragment {
      */
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
-//        void onFragmentInteraction(Uri uri);
-        void onFragmentBMRCliked();
-        void onFragmentKcalCliked();
+        void onFragmentInteraction(Uri uri);
     }
 }
