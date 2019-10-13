@@ -1,16 +1,23 @@
 package com.valdo.kalkulatorkalori.fragment;
 
 import android.content.Context;
+import android.icu.text.UnicodeSetSpanner;
 import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.valdo.kalkulatorkalori.R;
+import com.valdo.kalkulatorkalori.util.HitungKalori;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -21,7 +28,8 @@ import com.valdo.kalkulatorkalori.R;
 public class BerenangFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
-
+    private EditText beratBadan, waktu;
+    private Button button;
     public BerenangFragment() {
         // Required empty public constructor
     }
@@ -31,7 +39,34 @@ public class BerenangFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_berenang, container, false);
+        View view = inflater.inflate(R.layout.fragment_berenang, container, false);
+        beratBadan = view.findViewById(R.id.beratBadanBerenang);
+        waktu = view.findViewById(R.id.waktuBerenang);
+        button = view.findViewById(R.id.buttonHitungKaloriBerenang);
+        final TextView hasil = view.findViewById(R.id.hasilBerenang);
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (mListener == null){
+                    String  beratString = beratBadan.getText().toString();
+                    String waktuString = waktu.getText().toString();
+                    if (!TextUtils.isEmpty(waktuString) && !TextUtils.isEmpty(beratString)){
+                        int beratbadan = Integer.parseInt(beratString);
+                        int waktu = Integer.parseInt(waktuString);
+                        HitungKalori hitungKalori = new HitungKalori(0,waktu,beratbadan);
+                        hasil.setText("Hasil Kalori yand di bakar " + hitungKalori.getIndexBerenang() + " kkal");
+                    }
+                    else {
+                        Toast.makeText(getActivity(), "Silahkan isi semua table",Toast.LENGTH_SHORT).show();
+                    }
+
+                }
+            }
+        });
+
+
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

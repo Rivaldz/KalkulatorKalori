@@ -6,11 +6,17 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.valdo.kalkulatorkalori.R;
+import com.valdo.kalkulatorkalori.util.HitungKalori;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -21,6 +27,8 @@ import com.valdo.kalkulatorkalori.R;
 public class BersepedaFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
+    private EditText beratBadan, waktu, kecepatan;
+    private Button button;
 
     public BersepedaFragment() {
         // Required empty public constructor
@@ -31,7 +39,39 @@ public class BersepedaFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_bersepeda, container, false);
+        View view = inflater.inflate(R.layout.fragment_bersepeda, container, false);
+        beratBadan = view.findViewById(R.id.beratBadanSepeda);
+        waktu = view.findViewById(R.id.waktuSepeda);
+        kecepatan = view.findViewById(R.id.kecepatanSepeda);
+        button = view.findViewById(R.id.hitungSepeda);
+        final TextView hasil = view.findViewById(R.id.hasilBersepeda);
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (mListener == null){
+                    String beratBadanString = beratBadan.getText().toString();
+                    String waktuString = waktu.getText().toString();
+                    String kecepatanString = kecepatan.getText().toString();
+                    if (!TextUtils.isEmpty(beratBadanString) && !TextUtils.isEmpty(waktuString) && !TextUtils.isEmpty(kecepatanString)){
+                        int beratBadan = Integer.parseInt(beratBadanString);
+                        int waktu = Integer.parseInt(waktuString);
+                        int kecepatan = Integer.parseInt(kecepatanString);
+                        HitungKalori hitungKalori = new HitungKalori(kecepatan,waktu,beratBadan);
+                        hasil.setText("Kalori Yang telah di bakar " + hitungKalori.getIndexBersepeda() + " kkal");
+
+
+                    }
+                    else {
+                        Toast.makeText(getActivity(),"Silahkan Isi semua form",Toast.LENGTH_SHORT).show();
+                    }
+
+                }
+            }
+        });
+
+
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

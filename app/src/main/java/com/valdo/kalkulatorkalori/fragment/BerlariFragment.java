@@ -13,6 +13,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.valdo.kalkulatorkalori.R;
 import com.valdo.kalkulatorkalori.activities.PembakaranKalori;
@@ -28,7 +30,7 @@ public class BerlariFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
     private EditText beratBadan, waktu, jarak;
-    private RadioButton hitung;
+    private Button hitung;
 
     public BerlariFragment() {
         // Required empty public constructor
@@ -40,15 +42,16 @@ public class BerlariFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_berlari, container, false);
-        beratBadan = view.findViewById(R.id.textViewBerat);
-        waktu = view.findViewById(R.id.textViewBerat);
-        jarak = view.findViewById(R.id.textVIewJarak);
-        hitung = view.findViewById(R.id.buttonHitungLari);
+        beratBadan = view.findViewById(R.id.editTextBerat);
+        waktu = view.findViewById(R.id.editWaktu);
+        jarak = view.findViewById(R.id.editTextJarak);
+        hitung = view.findViewById(R.id.buttonHitungKaloriLari);
+        final TextView hasil = view.findViewById(R.id.hasilKaloriLari);
 
         hitung.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (mListener != null){
+                if (mListener == null){
                     String beratString = beratBadan.getText().toString();
                     String waktuString = waktu.getText().toString();
                     String jarakString = jarak.getText().toString();
@@ -57,9 +60,11 @@ public class BerlariFragment extends Fragment {
                         int waktu = Integer.parseInt(waktuString);
                         int jarak = Integer.parseInt(jarakString);
                         HitungKalori hitungKalori = new HitungKalori(jarak,waktu,beratBadan);
-                        mListener.onCalculateButtonClick(hitungKalori.getIndex());
+                        hasil.setText("Hasil Pembakaran Kalori Anda " + hitungKalori.getIndex() + " kkal");
 
-
+                    }
+                    else {
+                        Toast.makeText(getActivity(),"Silahkan isi semua form",Toast.LENGTH_SHORT).show();
                     }
                 }
             }
@@ -103,6 +108,6 @@ public class BerlariFragment extends Fragment {
      */
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
-        void onCalculateButtonClick(int index);
+        void onCalculateButtonClick(float index);
     }
 }

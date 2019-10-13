@@ -15,8 +15,7 @@ import com.valdo.kalkulatorkalori.fragment.MenuFragment;
 public class MainActivity extends AppCompatActivity implements
         MenuFragment.OnFragmentInteractionListener,
         BasalMetabolicRateFragment.OnFragmentInteractionListener,
-        HasilFragment.OnFragmentInteractionListener,
-        BerlariFragment.OnFragmentInteractionListener {
+        HasilFragment.OnFragmentInteractionListener{
 
    private MenuFragment menuFragment;
    private BasalMetabolicRateFragment basalMetabolicRateFragment;
@@ -81,13 +80,13 @@ public class MainActivity extends AppCompatActivity implements
 
     }
 
-    @Override
-    public void onCalculateButtonClick(int index) {
-        hasilFragment.setInformasi(String.format("Jumlah Kalori Yang Telah di Bakar  %.1f",index));
-         berlariFragment = (BerlariFragment) getSupportFragmentManager().findFragmentByTag("BerlariKalori");
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.fragment_container,hasilFragment)
-//				.addToBackStack(null)
-                .commit();
-    }
+//    @Override
+//    public void onCalculateButtonClick(float index) {
+//        hasilFragment.setInformasi(String.format("Jumlah Kalori Yang Telah di Bakar  %.1f",index));
+//         berlariFragment = (BerlariFragment) getSupportFragmentManager().findFragmentByTag("BerlariKalori");
+//        getSupportFragmentManager().beginTransaction()
+//                .replace(R.id.hitungKalori,hasilFragment)
+////				.addToBackStack(null)
+//                .commit();
+//    }
 }
