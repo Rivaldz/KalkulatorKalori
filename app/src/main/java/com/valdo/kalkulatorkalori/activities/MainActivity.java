@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity implements
 
     @Override
     public void onCalculateButtonBMRClicked(float index) {
-        hasilFragment.setInformasi(String.format("Your ideal weight is %.2f",index));
+        hasilFragment.setInformasi(String.format("Kebutuhan kalori harian anda adalah %.1f",index));
         basalMetabolicRateFragment = (BasalMetabolicRateFragment) getSupportFragmentManager().findFragmentByTag("BROCA_FRAGMENT");
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.fragment_container,hasilFragment)

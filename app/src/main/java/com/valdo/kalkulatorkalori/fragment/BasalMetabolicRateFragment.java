@@ -72,8 +72,32 @@ public class BasalMetabolicRateFragment extends Fragment {
                       int berat = Integer.parseInt(beratBadanString);
                       int usia = Integer.parseInt(usiaString);
                       int gender = (checkID == R.id.radioLaki_Laki) ? BasaMetabolicRate.MALE : BasaMetabolicRate.FEMALE;
-                      BasaMetabolicRate basaMetabolicRate = new BasaMetabolicRate(tinggi,berat,usia,gender);
-                      mListener.onCalculateButtonBMRClicked(basaMetabolicRate.getIndex());
+                       if (kurangAktif.isChecked()){
+                           BasaMetabolicRate basaMetabolicRate = new BasaMetabolicRate(tinggi,berat,usia,gender,  1.2);
+                           mListener.onCalculateButtonBMRClicked(basaMetabolicRate.getIndex());
+
+                       }
+                       else if (sedikitAktif.isChecked()){
+
+                           BasaMetabolicRate basaMetabolicRate = new BasaMetabolicRate(tinggi,berat,usia,gender, 1.375);
+                           mListener.onCalculateButtonBMRClicked(basaMetabolicRate.getIndex());
+
+                       }
+                       else if (cukupAktif.isChecked()){
+
+                           BasaMetabolicRate basaMetabolicRate = new BasaMetabolicRate(tinggi,berat,usia,gender,  1.55);
+                           mListener.onCalculateButtonBMRClicked(basaMetabolicRate.getIndex());
+                       }
+                       else if (sangatAktif.isChecked()){
+
+                           BasaMetabolicRate basaMetabolicRate = new BasaMetabolicRate(tinggi,berat,usia,gender,  1.75);
+                           mListener.onCalculateButtonBMRClicked(basaMetabolicRate.getIndex());
+                       }
+                       else if (aktif.isChecked()){
+
+                           BasaMetabolicRate basaMetabolicRate = new BasaMetabolicRate(tinggi,berat,usia,gender, 1.9);
+                           mListener.onCalculateButtonBMRClicked(basaMetabolicRate.getIndex());
+                       }
 
                    }
                    else {
@@ -89,7 +113,6 @@ public class BasalMetabolicRateFragment extends Fragment {
     }
 
     private void userAnswer(){
-
 
 
     }
