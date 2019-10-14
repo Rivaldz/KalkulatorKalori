@@ -55,7 +55,7 @@ public class BerenangFragment extends Fragment {
                         int beratbadan = Integer.parseInt(beratString);
                         int waktu = Integer.parseInt(waktuString);
                         HitungKalori hitungKalori = new HitungKalori(0,waktu,beratbadan);
-                        hasil.setText("Hasil Kalori yand di bakar " + hitungKalori.getIndexBerenang() + " kkal");
+                       hasil.setText("Hasil Kalori yang di bakar " + hitungKalori.getIndexBerenang() + " kkal");
                     }
                     else {
                         Toast.makeText(getActivity(), "Silahkan isi semua table",Toast.LENGTH_SHORT).show();
